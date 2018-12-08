@@ -1,6 +1,3 @@
-// user will be able to search for anime 
-// user will be able to view anime 
-//user will be able to add anime
 const Anime = require('../models/anime-data-1');
 
 module.exports = (app) => {

@@ -16,24 +16,64 @@ const fakeUser = {
 }
 
 
-describe("testing user  signup route", () => {
-    it("should create a new user account", done => {
-        User.findOneAndRemove(fakeUser, () => {
-            User.find((err, user) => {
+var agent = chai.request.agent(app);
 
-                chai
-                    .request(app)
-                    .post('/signup')
-                    .send(fakeUser)
-                    .then(res => {
-                        res.should.have.status(200);
-                        return done
-                    }).catch(err => {
-                        return done(err)
-                    });
-            });
+
+before(done => {
+    agent
+        .post("/login")
+        .send(fakeUser)
+        .end(function (err, res) {
+            done();
         });
+});
 
+describe("User", function () {
+    // TESTS WILL GO HERE.
+
+    it("should not be able to login if they have not registered", done => {
+        agent.post("/login", {
+            // Sending the wrong credentials
+            email: "wrong@wrong.com",
+            password: "nope"
+        }).end(function (err, res) {
+            res.status.should.be.equal(500);
+            done();
+        });
+    });
+
+    // signup
+    it("should be able to signup", done => {
+        User.findOneAndRemove(fakeUser,
+            function () {
+                agent
+                    .post("/signup")
+                    .send(fakeUser)
+                    .end(function (err, res) {
+                        console.log(res.body);
+                        // Response should have a status of 200 and the response should bre present on the request 
+                        res.should.have.status(200);
+                        // res.should.have.json(token);
+                    });
+                done();
+            });
+    });
+
+
+
+    // login
+    it("should be able to login", done => {
+        agent
+            .post("/login")
+            .send({
+                email: "keonimurray22@gmail.co",
+                password: "password"
+            })
+            .end(function (err, res) {
+                res.should.have.status(200);
+
+                done();
+            });
     });
 
 });
