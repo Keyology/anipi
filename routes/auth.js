@@ -32,7 +32,7 @@ module.exports = (app) => {
                     }, process.env.SECRET, {
                         expiresIn: "60 days"
                     });
-                    res.json(token)
+                    res.json(token).status(200)
 
                     console.log(user);
 
