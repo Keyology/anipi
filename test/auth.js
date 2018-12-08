@@ -15,6 +15,11 @@ const fakeUser = {
 
 }
 
+const fakeloginUser = {
+    email: "keonimurray22@gmail.com",
+    password: "password"
+
+}
 
 var agent = chai.request.agent(app);
 
@@ -65,13 +70,9 @@ describe("User", function () {
     it("should be able to login", done => {
         agent
             .post("/login")
-            .send({
-                email: "keonimurray22@gmail.co",
-                password: "password"
-            })
+            .send(fakeloginUser)
             .end(function (err, res) {
                 res.should.have.status(200);
-
                 done();
             });
     });

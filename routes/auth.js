@@ -78,7 +78,7 @@ module.exports = (app) => {
 
 
 
-                        res.json(token);
+                        res.json(token).status(200);
 
 
 
