@@ -4,6 +4,7 @@ const port = process.env.PORT || 4000;
 const bodyParser = require('body-parser');
 const auth = require('./routes/auth')
 const animeSearch = require('./routes/main');
+const user = require('./routes/user');
 
 
 
@@ -27,6 +28,7 @@ require('./db/anime-db');
 
 auth(app);
 animeSearch(app);
+user(app);
 
 
 

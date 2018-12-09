@@ -43,8 +43,9 @@ describe("User", function () {
             password: "nope"
         }).end(function (err, res) {
             res.status.should.be.equal(500);
-            done();
+
         });
+        done()
     });
 
     // signup
