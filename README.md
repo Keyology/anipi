@@ -2,4 +2,4 @@
 
 check out brochure website for this  API 
 
-https://trusting-euler-677e9d.netlify.com/
+https://animeapi.netlify.com/?_ga=2.245060871.321531303.1544335852-1087166260.1544335852
