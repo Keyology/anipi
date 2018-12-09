@@ -14,7 +14,7 @@ UserSchema = new Schema({
     },
     email: {
         type: String,
-        trim: true,
+        unique: true,
         required: true
 
     },
@@ -22,7 +22,6 @@ UserSchema = new Schema({
     userName: {
         type: String,
         trim: true,
-        unique: true
 
     },
 

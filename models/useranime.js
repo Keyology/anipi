@@ -4,7 +4,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-Useranime = new Schema({
+UseranimeSchema = new Schema({
 
     _id: mongoose.Schema.Types.ObjectId,
 
@@ -28,4 +28,4 @@ Useranime = new Schema({
 
 })
 
-module.exports = mongoose.model('Useranime', useranimeSchema);
+module.exports = mongoose.model('Useranime', UseranimeSchema);
