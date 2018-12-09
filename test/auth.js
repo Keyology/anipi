@@ -21,7 +21,7 @@ const fakeloginUser = {
 
 }
 
-var agent = chai.request.agent(app);
+const agent = chai.request.agent(app);
 
 
 before(done => {
@@ -73,8 +73,24 @@ describe("User", function () {
             .send(fakeloginUser)
             .end(function (err, res) {
                 res.should.have.status(200);
-                done();
+
             });
+        done();
     });
+
+    // it("should be able to login test 2", done => {
+    //     User.findOne(fakeloginUser, function () {
+    //         agent
+    //             .post('/login')
+    //             .send(fakeloginUser)
+    //             .end(function (err, res) {
+    //                 res.should.have.status(200)
+    //             });
+    //         done();
+
+
+
+    //     });
+    // });
 
 });

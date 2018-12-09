@@ -4,7 +4,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-animeshowsSchema = new Schema({
+Useranime = new Schema({
 
     _id: mongoose.Schema.Types.ObjectId,
 
@@ -28,4 +28,4 @@ animeshowsSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('Animeshows', animeshowsSchema);
+module.exports = mongoose.model('Useranime', useranimeSchema);

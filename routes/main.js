@@ -19,9 +19,9 @@ module.exports = (app) => {
             if (err) {
                 res.json({
                     error: err
-                })
+                }).status(500)
             } else {
-                res.json(anime)
+                res.json(anime).status(200)
                 console.log(anime)
             }
         })
