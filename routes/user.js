@@ -48,7 +48,22 @@ module.exports = (app) => {
 
     });
 
-    app.post('addanime', (req, res) => {
+    app.put('/userprofile', (req, res) => {
+        // this route will update user profile
 
+        User.findOneAndUpdate(req.body.email, {
+            email: req.body.newemail
+        }, (err) => {
+            if (err) {
+                res.json({
+                    message: "could not update email"
+                }).status(500);
+            } else {
+                res.json({
+                    message: "email updated"
+                }).status(200)
+
+            }
+        })
     })
 }
