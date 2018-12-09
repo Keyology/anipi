@@ -2,6 +2,7 @@
 // user will be able to delete  account
 //user will be able to add anime
 const Useranime = require('../models/useranime');
+const User = require('../models/user');
 
 module.exports = (app) => {
 
@@ -9,15 +10,15 @@ module.exports = (app) => {
         // this route will return user profile
 
         // This route will send a query to the mongodb and return the artist profile info in a json object
-        Artist.findOne({
+        User.findOne({
             email: req.params.email
-        }, (err, Artist) => {
+        }, (err, user) => {
             if (err) {
                 res.json({
                     error: err
-                })
+                }).status(500)
             } else {
-                res.json(Artist)
+                res.json(user).status(200)
             }
         })
 

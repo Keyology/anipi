@@ -2,7 +2,7 @@
  const chaiHttp = require("chai-http");
  const should = chai.should();
  const app = require('../server');
- const Anime = require('../models/anime-data-1');
+ const Anime = require('../models/animeshows');
 
  chai.use(chaiHttp);
  const agent = chai.request.agent(app);

@@ -20,10 +20,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
+require('dotenv').config()
 
 require('./db/anime-db');
-require('dotenv').config()
+
 
 auth(app);
 animeSearch(app);

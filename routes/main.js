@@ -1,4 +1,4 @@
-const Anime = require('../models/anime-data-1');
+const Anime = require('../models/animeshows');
 
 module.exports = (app) => {
 
