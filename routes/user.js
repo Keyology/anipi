@@ -2,7 +2,7 @@
 // user will be able to delete  account
 //user will be able to add anime
 
-const Useranime = require('../models/useranime');
+
 const User = require('../models/user');
 
 module.exports = (app) => {
