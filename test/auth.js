@@ -16,8 +16,8 @@ const fakeUser = {
 }
 
 const fakeloginUser = {
-    email: "keonimurray22@gmail.com",
-    password: "password"
+    email: "keonimurray123@gmail",
+    password: "12345"
 
 }
 
@@ -50,7 +50,7 @@ describe("User", function () {
 
     // signup
     it("should be able to signup", done => {
-        User.findOneAndRemove(fakeUser,
+        User.findOneAndDelete(fakeUser,
             function () {
                 agent
                     .post("/signup")

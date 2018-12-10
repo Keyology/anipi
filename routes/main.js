@@ -15,7 +15,9 @@ module.exports = (app) => {
 
 
         }, (err, anime) => {
+            console.log("this is an error1:", err)
             if (err) {
+                console.log("this is an error2:", err)
                 res.json({
                     error: err
                 }).status(500)

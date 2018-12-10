@@ -6,9 +6,10 @@ const User = require('..//models/user');
 
 chai.use(chaiHttp);
 const agent = chai.request.agent(app);
-const fakeemail = "keonimurray99@gmail.com";
+const fakeemail = "Johnadams123@gmail.com";
 const FakeEmail1 = "fakeemail@gmail.com";
 const newFakeEmail = "fakeemail1234@gmail.com";
+const fake_email2 = "updatethisemail@gmail.com";
 describe("User", function () {
     it('should return user profile information in json format', done => {
 
@@ -18,8 +19,10 @@ describe("User", function () {
                 .send(fakeemail)
                 .end(function (err, res) {
                     res.should.have.status(200)
+                    done()
+
                 });
-            done();
+
         })
     });
     it(" should delete user profile", done => {
@@ -37,10 +40,10 @@ describe("User", function () {
 
     it("should update user profile", done => {
 
-        User.findOneAndUpdate(newFakeEmail, function (err, res) {
+        User.findOneAndUpdate(fakeemail, function (err, res) {
             agent
                 .put('/userprofile')
-                .send(FakeEmail1)
+                .send(fake_email2)
                 .end(function (err, res) {
                     res.should.have.status(200)
                 });
