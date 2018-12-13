@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "11.x"
+  },
   "scripts": {
+    "start": "node server.js",
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["heroku"],
+  "author": "Keoni Murray",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.2",
