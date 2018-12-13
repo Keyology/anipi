@@ -11,4 +11,4 @@ https://keyology.github.io/anime-api-docs/#/
 
 link to deployment website 
 
-https://git.heroku.com/anime-api-project.git
+https://anime-api-project.herokuapp.com/
