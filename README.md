@@ -8,3 +8,7 @@ https://animeapi.netlify.com/?_ga=2.245060871.321531303.1544335852-1087166260.15
 Documentation
 
 https://keyology.github.io/anime-api-docs/#/
+
+link to deployment website 
+
+https://git.heroku.com/anime-api-project.git
