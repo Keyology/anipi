@@ -6,6 +6,7 @@ const auth = require('./routes/auth')
 const animeSearch = require('./routes/main');
 const mongoose = require('mongoose');
 const user = require('./routes/user');
+const home = require('./routes/home');
 
 
 
@@ -30,6 +31,7 @@ require('./db/anime-db');
 auth(app);
 animeSearch(app);
 user(app);
+home(app);
 
 
 
