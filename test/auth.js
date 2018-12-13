@@ -79,19 +79,6 @@ describe("User", function () {
         done();
     });
 
-    it("should be able to login test 2", done => {
-        User.findOne(fakeloginUser, function () {
-            agent
-                .post('/login')
-                .send(fakeloginUser)
-                .end(function (err, res) {
-                    res.should.have.status(200)
-                });
-            done();
 
-
-
-        });
-    });
 
 });
